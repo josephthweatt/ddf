@@ -205,6 +205,7 @@ public class IdpEndpoint implements Idp, SessionHandler {
   protected CookieCache cookieCache = new CookieCache();
   private STSAuthenticationTokenFactory tokenFactory;
   private OcspService ocspService;
+  private String welcomeText;
   private SecurityManager securityManager;
   private AtomicReference<Map<String, EntityInformation>> serviceProviders =
       new AtomicReference<>();
@@ -735,6 +736,7 @@ public class IdpEndpoint implements Idp, SessionHandler {
         return binding.creator().getSamlpResponse(relayState, authnRequest, samlpResponse, cookie);
       } else {
         LOGGER.debug("Building the JSON map to embed in the index.html page for login.");
+        responseMap.put(WELCOME_TEXT, welcomeText);
         responseMap.put(PKI, hasCerts);
         responseMap.put(GUEST, guestAccess);
         // Using the ORIGINAL request
@@ -1623,6 +1625,10 @@ public class IdpEndpoint implements Idp, SessionHandler {
   public void setSpMetadata(List<String> spMetadata) {
     this.spMetadata = spMetadata;
     serviceProviders.getAndSet(null);
+  }
+
+  public void setWelcomeText(String welcomeText) {
+    this.welcomeText = welcomeText;
   }
 
   public void setStrictSignature(Boolean strictSignature) {

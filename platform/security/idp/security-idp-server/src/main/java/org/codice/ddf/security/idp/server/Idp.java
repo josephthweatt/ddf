@@ -57,6 +57,8 @@ public interface Idp {
 
   String SAML_TYPE = "SAML_TYPE";
 
+  String WELCOME_TEXT = "welcomeText";
+
   String PKI = "pki";
 
   String SAML = "saml";
