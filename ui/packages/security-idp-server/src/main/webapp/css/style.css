@@ -37,6 +37,12 @@ body {
   color: white;
 }
 
+.welcome-text {
+  font-size: x-large;
+  padding-bottom: 10px;
+  margin-left: 40px;
+}
+
 .green {
   background-color: darkgreen;
 }

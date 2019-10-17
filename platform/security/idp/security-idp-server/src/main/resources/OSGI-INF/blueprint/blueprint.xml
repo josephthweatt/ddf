@@ -55,7 +55,7 @@
         <argument value="${ddf.etc}/ws-security/issuer/signature.properties"/>
         <argument value="${ddf.etc}/ws-security/issuer/encryption.properties"/>
         <argument ref="encryptionService" />
-        <property name="welcomeText" value="Welcome!" />
+        <property name="welcomeText" value="" />
         <property name="securityManager" ref="securityManager"/>
         <property name="tokenFactory" ref="tokenFactory" />
         <property name="strictSignature" value="true" />

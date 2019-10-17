@@ -12,8 +12,10 @@
  **/
  --}}
 <div class="login-container">
+    {{#if welcomeText}}
+        <div class="welcome-text">{{welcomeText}}</div>
+    {{/if}}
     <div class="form-container">
-        <div id="welcomeText">{{welcomeText}}</div>
         <form role="form" id="uploginForm">
             <div id="loginerrorup" class="text-danger" style="display: none;">Credentials are
                 invalid.
@@ -38,7 +40,6 @@
     </div>
     {{#is pki true}}
         <div class="form-container">
-            <div id="welcomeText">{{welcomeText}}</div>
             <form role="form" id="pkiloginForm">
                 <div id="loginerrorpki" class="text-danger" style="display: none;">Credentials are
                     invalid.
@@ -53,7 +54,6 @@
     {{/is}}
     {{#is guest true}}
     <div class="form-container">
-        <div id="welcomeText">{{welcomeText}}</div>
         <form role="form" id="guestloginForm">
             <div id="loginerrorguest" class="text-danger" style="display: none;">Credentials are
                 invalid.

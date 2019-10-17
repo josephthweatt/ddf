@@ -1628,7 +1628,7 @@ public class IdpEndpoint implements Idp, SessionHandler {
   }
 
   public void setWelcomeText(String welcomeText) {
-    this.welcomeText = welcomeText;
+    this.welcomeText = welcomeText.trim();
   }
 
   public void setStrictSignature(Boolean strictSignature) {
